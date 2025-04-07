@@ -1,9 +1,11 @@
 export const environment = {
   production: true,
-  pdfBaseUrl:"https://academyapi.balady.gov.sa/fetch-image?load=",
-  apiEndpoint: 'https://academyapi.balady.gov.sa/api',
-  baseUrl: 'https://academyapi.balady.gov.sa/fetch-image?load=',
+  apiEndpoint: 'https://stgacademyapi.momrah.gov.sa/api',
+  baseUrl: 'https://stgacademyapi.momrah.gov.sa:8002/',
+  openIdRedirect: '',
   notFoundImage: 'assets/image/notfound.png',
   passPhrase: 'e1d822ae154bfb1c02e2f2f0f2bd26be3b91cde7',
-  staticToken: ''
+  staticToken:
+    // eslint-disable-next-line max-len
+    ''
 };

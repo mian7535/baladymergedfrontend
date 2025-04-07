@@ -28,7 +28,6 @@ export class ExamPassedComponent implements OnInit {
     api.pop();
     api.push(`api/student/generate-certificate?user_id=${userId}&lang=${lang}`);
     window.open(api.join('/'));
-    
   }
 
 }

@@ -1,0 +1,344 @@
+.ion-header {
+  text-align: center;
+  position: relative;
+}
+
+.ion-cross {
+  position: absolute;
+  top: 25%;
+  right: 2%;
+  font-size: 2rem;
+}
+
+.login-txt {
+  text-align: center;
+  margin: 5px;
+  font-size: 40px;
+}
+
+.ion-lang-btn {
+  margin: 15px 20px;
+}
+
+.ion-text-title {
+  margin-bottom: 40px;
+}
+
+// .ion-submit-btn ::ng-deep{
+//   margin: 55px 20px 20px 20px;
+//   .button-native{
+//     background: #036362 !important;
+//   }
+// }
+.sub-header {
+  background: #1c4b44 0% 0% no-repeat padding-box;
+  box-shadow: 0px 1px 6px #00000057;
+  height: 4rem;
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  .back-button-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    color: white;
+  }
+  .logo-block {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.video-container {
+  background: transparent linear-gradient(0deg, #1c4b44 0%, #90ba54 100%) 0% 0%
+    no-repeat padding-box;
+  box-shadow: 0px 2px 6px #0000001f;
+  border-radius: 0px 0px 7px 7px;
+  opacity: 1;
+  color: white;
+  padding: 1.5rem;
+  .video-block {
+    width: -webkit-fill-available;
+    padding: 0 0 1.5rem 0;
+    height: 275px;
+  }
+  .course-block {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    grid-template-columns: 10% 80% 10%;
+    .course-title-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: normal;
+    }
+    .course-text{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: normal;
+    }
+    .course-upload-button {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      cursor: pointer;
+    }
+  }
+  .paragraph-text {
+    padding-top: 0.8rem;
+    font-size: 20px;
+  }
+  .author-details {
+    padding-top: 0.5rem;
+    font-weight: normal;
+    span {
+      color: antiquewhite;
+    }
+  }
+  .liner {
+    background-color: white;
+    height: 2px;
+    margin: 1rem 0;
+  }
+  .course-level-container {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    font-weight: normal;
+    .level-block {
+      display: flex;
+      align-items: center;
+    }
+    .rating-block {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+    }
+    .language-block {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+  .course-bottom-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-top: 0.8rem;
+    .student-block {
+      display: flex;
+      align-items: center;
+    }
+    .update-block {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.logo-image {
+  width: 80px;
+  display: inline-block;
+}
+::ng-deep .course-details-page {
+  .details * {
+    margin: 0 !important;
+  }
+}
+
+::ng-deep {
+  ion-accordion.accordion-animated
+    > [slot="header"]
+    .ion-accordion-toggle-icon {
+    width: 18px;
+  }
+}
+
+.course-description-container {
+  padding: 3rem 1.5rem 1.5rem 1.5rem;
+  background-color: #f7f7f7;
+  .include {
+    font-size: 1.25rem;
+    font-weight: 500;
+    span {
+      background-color: #84bc47;
+      height: 0.45rem;
+      width: 3rem;
+      margin-top: 0.4rem;
+      display: block;
+    }
+  }
+  .include-details {
+    padding: 2rem 0;
+    .include-text {
+      display: flex;
+      align-items: center;
+      span {
+        font-size: 1.3rem;
+        color: #84bc47;
+      }
+    }
+  }
+  .start-button {
+    --border-radius: 1.5rem;
+    --background: #036362;
+  }
+  .description-card-block {
+
+    ion-card {
+      margin: 0;
+    }
+
+    .card-header {
+      text-align: center;
+      border-bottom: 1px solid #e9e9e9;
+      margin: 0 1rem;
+      ion-card-title {
+        color: #036362;
+        font-size: 20px;
+        font-weight: normal;
+      }
+    }
+    ion-card-content {
+      margin-top: 1rem;
+      .course-plan {
+        font-size: 1.25rem;
+        color: black;
+        span {
+          background-color: #84bc47;
+          height: 0.45rem;
+          width: 3rem;
+          margin-top: 0.4rem;
+          display: block;
+        }
+        .plan-details {
+          font-size: 12px;
+          margin-top: 16px;
+        }
+        .view-more {
+          font-size: 12px;
+          color: #84bc47;
+          cursor: pointer;
+        }
+      }
+      .layout-block {
+        color: black;
+        font-size: 20px;
+        font-weight: 500;
+        margin-top: 12px;
+        span {
+          background-color: #84bc47;
+          height: 0.45rem;
+          width: 3rem;
+          margin-top: 0.4rem;
+          display: block;
+        }
+        .completion {
+          font-size: 12px;
+          margin-top: 12px;
+          color: #5a5a5a;
+        }
+        .completion-details {
+          display: grid;
+          grid-template-columns: 7% 93%;
+          margin-top: 12px;
+          .pointer {
+            color: #84bc47;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+          }
+          .details {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  .finish-button {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+
+    ion-button {
+      --color: #fff;
+      --background: #036362;
+      --border-radius: 35px;
+    }
+  }
+  .curriculum-card-block {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    ion-card {
+      margin: 0;
+    }
+
+    .card-header {
+      text-align: center;
+      border-bottom: 1px solid #e9e9e9;
+      margin: 0 1rem;
+      ion-card-title {
+        color: #036362;
+        font-size: 20px;
+        font-weight: normal;
+      }
+    }
+    .duration {
+      display: flex;
+      justify-content: center;
+      margin: 12px 0 0 0;
+      color: #84bc47;
+      font-size: 16px;
+    }
+    .accordion-group {
+      padding: 1rem 0 0 0;
+      .accordion-group-block {
+        .chapter-index-block {
+          width: 100%;
+          display: grid;
+          grid-template-columns: 16% 84%;
+          .chapter-index {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: 400;
+            color: #177878;
+          }
+          .chapter-title {
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            color: #177878;
+          }
+          .chapter-duration {
+            font-size: 14px;
+            color: #878787;
+          }
+        }
+        .accordion-list {
+          padding: 1rem;
+          .learn-text {
+            font-size: 15px;
+            margin-bottom: 12px;
+            color: #036362;
+          }
+          .list-details {
+            padding-bottom: 0.5rem;
+            display: flex;
+            justify-content: space-between;
+            span{
+              font-size: 20px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+cdk-virtual-scroll-viewport {
+  height: 100%;
+  width: 100%;
+}

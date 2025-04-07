@@ -1,0 +1,58 @@
+.feedback-image {
+    width: 75%;
+}
+
+.mx-auto {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.input-field{
+    color: #777777;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.layout-block {
+    font-size: 20px;
+    text-align: center;
+    color: var(--info-color);
+}
+
+.start-button {
+    text-align: center;    
+    margin: 25px;
+
+    ion-button {
+        --background: #036362;
+    }
+}
+
+ngb-rating {
+    font-size: 50px;
+    color: #fdb833;
+}
+.filled {
+    color: #1e90ff;
+}
+::ng-deep span.sr-only {
+    display: none;
+}
+
+::ng-deep .alert-model ::ng-deep {
+    .alert-button-group {
+        justify-content: center;
+        display: flex;
+
+        button {
+            width: 100px;
+            background: #036362;
+            color: #fff;
+            border-radius: 32px;
+
+            span.alert-button-inner.sc-ion-alert-md {
+                justify-content: center;
+            }
+        }
+    }
+}

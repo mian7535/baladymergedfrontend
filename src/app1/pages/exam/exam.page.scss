@@ -1,0 +1,62 @@
+.ion-head-tag {
+  background: transparent linear-gradient(0deg, #1c4b44 0%, #90ba54 100%) 0% 0%
+    no-repeat padding-box;
+  height: 100px;
+}
+.title-text {
+  color: #fff;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  padding-top: 25px;
+  margin-bottom: 20px;
+  letter-spacing: 0.38px;
+}
+.search-input {
+  display: flex;
+  justify-content: center;
+}
+.search-bar {
+  width: 400px;
+}
+.ion-content-tag {
+  margin-top: -50px;
+}
+.card-text,
+.card-text-info {
+  color: var(--info-color);
+  font-weight: 700;
+  font-size: 17px;
+  font-family: system-ui;
+  text-align: left;
+}
+
+.card-text-info {
+  font-size: 13px;
+}
+
+.take-exam {
+  font-size: 13px;
+}
+
+.object-fit-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.take-exam ::ng-deep {
+  --background: var(--info-color);
+  --color: var(--white-color);
+}
+
+.card-content {
+  border-radius: 4px 4px 0px 0px;
+}
+
+.ion-content-tag {
+  .header-padding {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}

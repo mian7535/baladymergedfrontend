@@ -1,0 +1,98 @@
+.exam-number {
+  background: transparent linear-gradient(0deg, #1c4b44 0%, #90ba54 100%) 0% 0%
+    no-repeat padding-box;
+  box-shadow: 0px 2px 6px #0000001f;
+  border-radius: 0px 0px 7px 7px;
+  color: white;
+  padding: 2.5rem;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.answers-wrapper {
+  margin-top: 25px;
+  p {
+    color: var(--info-color);
+    display: flex;
+    ion-icon {
+      font-size: 20px;
+      margin-left: 10px;
+    }
+  }
+}
+.display-blog {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.text-red {
+  color: red;
+}
+.text-green {
+  color: #84bc47;
+}
+.card-container ::ng-deep {
+  padding: 0;
+  margin-top: -65px;
+  .card-body {
+    margin: 35px;
+  }
+  ion-card-content {
+    margin-top: 0;
+    .layout-block {
+      color: black;
+      font-size: 20px;
+      font-weight: 500;
+      margin-top: 12px;
+      span {
+        background-color: #84bc47;
+        height: 0.45rem;
+        width: 3rem;
+        margin-top: 0.4rem;
+        display: block;
+      }
+      .completion-details {
+        display: grid;
+        grid-template-columns: 7% 93%;
+        margin-top: 12px;
+        .file {
+          color: #84bc47;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+        }
+        .details {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+.ion-submit-btn ::ng-deep {
+  --background: var(--info-color);
+  margin-top: 20px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+::ng-deep .alert-model-knowledge ::ng-deep {
+  .alert-button-group {
+    justify-content: center;
+    display: flex;
+
+    button {
+      width: 100px;
+      background: #036362;
+      color: #fff;
+      border-radius: 32px;
+
+      span.alert-button-inner.sc-ion-alert-md {
+        justify-content: center;
+      }
+    }
+  }
+}
