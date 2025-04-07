@@ -1,0 +1,117 @@
+<app-header [showSecondaryHeader]="true"></app-header>
+<ion-content>
+  <div class="login-container max-width-desk">
+    <div class="margin-desk">
+      <div class="ion-card">
+        <span class="text-head frutiger-bold d-block">{{profileDTO.fullName}}</span>
+        <!-- <span class="text-second-head frutiger-light d-block">
+          {{ 'Student' | translate }}
+        </span> -->
+      </div>
+      <div class="ion-item">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="12">
+              <button
+                type="button"
+                class="card box"
+                routerLink="/onboarding/0/1"
+              >
+                <img
+                  src="../../../assets/icon/icon2-balady.png"
+                  alt="View-Profile"
+                />
+                <div class="card-title-box frutiger-light">
+                  {{'Mumtathil Onboarding' | translate}}
+                </div>
+              </button>
+            </ion-col>
+            <ion-col size="12">
+              <button
+                type="button"
+                class="card box"
+                routerLink="/my-courses"
+              >
+                <img
+                  src="../../../assets/icon/icon1-balady.png"
+                  alt="View-Profile"
+                />
+                <div class="card-title-box frutiger-light">
+                  {{'Mumtathil Tutorials'| translate}}
+                </div>
+              </button>
+            </ion-col>
+
+
+            <ion-col size="12">
+              <button
+                type="button"
+                class="card box"
+                routerLink="/exam"
+              >
+                <img
+                  src="../../../assets/icon/icon1-balady.png"
+                  alt="View-Profile"
+                />
+                <div class="card-title-box frutiger-light">
+                  {{'Exam'| translate}}
+                </div>
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <ion-grid routerLink="/profile">
+        <ion-row class="courser-pointer">
+          <ion-col size="2">
+            <ion-avatar class="ion-margin-start ion-logo">
+              <img src="../../../assets/icon/profile.png"/>
+            </ion-avatar>
+          </ion-col>
+          <ion-col
+            size="9"
+            class="display-flex-center"
+          >
+            <div class="nav-row-text">{{ 'My account' | translate}}</div>
+          </ion-col>
+          <ion-col
+            size="1"
+            class="display-flex-center"
+          >
+            <ion-icon
+              name="chevron-forward-outline"
+              class="icon-chevron"
+            ></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid routerLink="/home">
+        <ion-row class="courser-pointer">
+          <ion-col size="2">
+            <ion-avatar class="ion-margin-start ion-logo">
+              <img src="../../../assets/icon/setting.png"/>
+            </ion-avatar>
+          </ion-col>
+          <ion-col
+            size="9"
+            class="display-flex-center"
+          >
+            <div class="nav-row-text">{{'Change language' | translate}}</div>
+          </ion-col>
+          <ion-col
+            size="1"
+            class="display-flex-center"
+          >
+            <ion-icon
+              name="chevron-forward-outline"
+              class="icon-chevron"
+            ></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+<app-footer></app-footer>

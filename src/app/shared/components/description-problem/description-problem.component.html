@@ -1,0 +1,30 @@
+<div class="give-feedback-wrapper wrapper-feedback">
+  <div class="wrap mx-auto">
+    <img
+      class="feedback-image"
+      src="../../../../assets/image/feedback_image.png"
+    />
+  </div>
+  <div class="container-wrapper">
+    <ion-card>
+      <ion-card-content>
+        <ion-col size="12" class="input-field text-subtitle frutiger-light">
+          <ion-label position="fixed">{{
+            "Describe the problem" | translate
+          }}</ion-label>
+          <!--<ion-textarea
+            rows="5"
+            placeholder="Type here"
+            [(ngModel)]="description"
+          ></ion-textarea>-->
+        </ion-col>
+
+      </ion-card-content>
+    </ion-card>
+    <div class="start-button">
+      <ion-button shape="round" expand="block" size="large">
+        {{ "Submit report" | translate }}
+      </ion-button>
+    </div>
+  </div>
+</div>

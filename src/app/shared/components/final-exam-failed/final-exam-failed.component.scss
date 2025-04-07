@@ -1,0 +1,44 @@
+.exam-completed-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feedback-image {
+    width: 150px;
+  }
+  
+  .mx-auto {
+    margin-top: 25px;
+    text-align: center;
+  }
+  
+  .layout-block {
+    font-size: 20px;
+    text-align: center;
+    color: var(--green-color);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    justify-content: center;
+    font-weight: 500;
+  }
+  
+  .congration-message {
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    word-wrap: break-word;
+    color: #666666;
+  }
+  
+  .start-button {
+    text-align: center;
+  
+    ion-button {
+      --background: #036362;
+    }
+  }
+  

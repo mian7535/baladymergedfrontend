@@ -1,0 +1,203 @@
+<app-header *ngIf="!modelOpen" [showSecondaryHeader]="true"></app-header>
+<ion-content *ngIf="!modelOpen">
+  <div class="login-container max-width-desk" *ngIf="!finishCourse">
+    <div>
+      
+      <div class="video-container">
+        <iframe
+          class="video-block"
+          style="border: 0;"
+          [src]="videoSource | safe"
+        ></iframe>
+        <!-- <video controls class="video-block">
+          <source [src]="videoSource" type="video/mp4" />
+        </video> -->
+        <div class="course-block">
+          <div class="course-title-text">
+            {{courseData[getKeyName('title')]}}
+          </div>
+          <!-- <div class="course-upload-button">
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+          </div> -->
+        </div>
+        <div
+          class="paragraph-text"
+          [innerHTML]="courseData[getKeyName('short_description')]"
+        ></div>
+        <!-- <div class="author-details">
+          Created by
+          <span>Instructor Name</span>
+        </div> -->
+        <div class="liner"></div>
+        <!-- <div class="course-level-container">
+          <div class="level-block">
+            <ion-icon name="star"></ion-icon>
+            <span style="margin-left: 5px;">0</span>
+            <ion-icon name="cellular-outline"></ion-icon>
+            <span style="margin-left: 5px;">{{ courseData.level }}</span>
+          </div>
+          <div class="rating-block">
+            
+          </div>
+          <div class="language-block">
+            <ion-icon name="globe-outline"></ion-icon>
+            <span style="margin-left: 5px;">{{courseData['language']}}</span>
+          </div>
+        </div> -->
+        <!-- <div class="course-bottom-container">
+          <div class="student-block">
+            <ion-icon name="people"></ion-icon>
+            <span>&nbsp;&nbsp;51,364 Students Enrolled</span>
+          </div>
+          <div class="update-block">
+            <ion-icon name="timer-outline"></ion-icon>
+            <span>&nbsp;&nbsp;Last Updated: Tue, 15 Jan 2022</span>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <div class="course-description-container">
+      <div class="include">
+        {{'Includes' | translate}}:
+        <span></span>
+      </div>
+      <div class="include-details">
+        <!-- <div class="include-text">
+          <span>
+            <ion-icon name="time-outline"></ion-icon>
+          </span>
+          &nbsp;&nbsp;00:00:00 {{'Hours' | translate}} On Demand Videos
+        </div> -->
+        <div class="include-text">
+          <span>
+            <ion-icon name="document-outline"></ion-icon>
+          </span>
+          &nbsp;&nbsp;{{ totalLessons() }} {{'Lessons' | translate}}
+        </div>
+        <div class="include-text">
+          <span>
+            <ion-icon name="key-outline"></ion-icon>
+          </span>
+          &nbsp;&nbsp;{{'Full Life-time access' | translate}}
+        </div>
+        <div class="include-text">
+          <span>
+            <ion-icon name="phone-portrait-outline"></ion-icon>
+          </span>
+          &nbsp;&nbsp;{{ 'Access on Mobile' | translate }}
+        </div>
+      </div>
+      
+
+      <div class="description-card-block" style="margin-bottom: 20px;">
+        <ion-card>
+          <ion-card-header class="card-header">
+            <ion-card-title>{{'Description' | translate}}</ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <div class="course-plan">
+              {{'Course Plan' | translate}}
+              <span></span>
+              <div class="plan-details"
+              [innerHTML]="courseData[getKeyName('short_description')]"
+              >
+              </div>
+              <!-- <div class="view-more">+ View more</div> -->
+            </div>
+            <div class="layout-block">
+              {{'Layout' | translate}}
+              <span></span>
+              <div class="completion">
+                {{ 'On completion of this course, you’ll walk away with:' | translate }}
+              </div>
+              <div
+                class="completion-details"
+                *ngFor="let completion of paragraph"
+              >
+                <div class="pointer">
+                  <!-- <ion-icon name="ellipse"></ion-icon> -->
+                </div>
+                <div
+                  class="details"
+                  [innerHTML]="courseData[getKeyName('description')]"
+                ></div>
+              </div>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+      <!-- <div class="curriculum-card-block">
+        <ion-card>
+          <ion-card-header class="card-header">
+            <ion-card-title>{{'Curriculum' | translate}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <div class="duration">
+              {{ totalLessons() }} {{'Lessons' | translate}} | 00:00:00
+              {{'Hours' | translate}}
+            </div>
+            <div
+              class="accordion-group"
+              *ngFor="let course of courseData.sections;let i=index"
+            >
+              <ion-accordion-group class="accordion-group-block">
+                <ion-accordion value="colors">
+                  <ion-item slot="header">
+                    <div class="chapter-index-block">
+                      <div class="chapter-index">{{i + 1}}</div>
+                      <div>
+                        <span class="chapter-title">
+                          {{course[getKeyName('name')]}}
+                        </span>
+                        <span class="chapter-duration">00 : 00 mins</span>
+                      </div>
+                    </div>
+                  </ion-item>
+
+                  <ion-list
+                    class="accordion-list"
+                    slot="content"
+                    *ngFor="let section of course.lessons;let si=index"
+                  >
+                    <div class="learn-text">What Will I Learn?</div>
+                    <div class="list-details">
+                      Section {{si + 1}} - {{section[getKeyName('title')]}}
+                      <span (click)="showModel(section)">
+                        <ion-icon name="eye-outline"></ion-icon>
+                      </span>
+                    </div>
+                  </ion-list>
+                </ion-accordion>
+              </ion-accordion-group>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div> -->
+
+      <ion-button
+        expand="full"
+        shape="round"
+        [routerLink]="'/course/' + courseId"
+        class="start-button"
+      >
+        {{'Start now'| translate}}
+      </ion-button>
+    </div>
+  </div>
+  <div class="login-container max-width-desk" *ngIf="finishCourse">
+    <app-give-feedback
+      (submitFeedback)="submitFeedback($event)"
+      *ngIf="!feedbackGiven"
+    ></app-give-feedback>
+    <app-finish-exam *ngIf="feedbackGiven"></app-finish-exam>
+  </div>
+</ion-content>
+<app-footer *ngIf="!modelOpen"></app-footer>
+<app-course-model
+  *ngIf="modelOpen"
+  (closeModel)="closeModel($event)"
+  [type]="typeOfSourse"
+  [pdfVideoSource]="pdfVideoSource"
+></app-course-model>

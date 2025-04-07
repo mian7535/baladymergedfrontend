@@ -1,0 +1,60 @@
+<app-header [showSecondaryHeader]="true"></app-header>
+<ion-content>
+  <div *ngIf="!slag" class="login-container max-width-desk justify-content-center">
+    <!-- <div class="wrap-top-image">
+      <ion-img src="assets/image/Group 1698.png"></ion-img>
+    </div> -->
+    <div class="ion-text-title">
+      <div class="login-txt">{{ 'Choose your preferred language' | translate }}</div>
+    </div>
+    <div class="ion-lang-btn">
+      <ion-button
+        size="large"
+        class="not-active"
+        [ngClass]="{ 'active-lang': preferredLang === 'arabic' }"
+        (click)="preferredLang = 'arabic'"
+        expand="block"
+      >
+        العربية
+      </ion-button>
+    </div>
+    <div class="ion-lang-btn">
+      <ion-button
+        size="large"
+        class="not-active"
+        [ngClass]="{ 'active-lang': preferredLang === 'english' }"
+        (click)="preferredLang = 'english'"
+        expand="block"
+      >
+        English
+      </ion-button>
+    </div>
+    <div class="ion-lang-btn">
+      <ion-button
+        size="large"
+        class="not-active"
+        [ngClass]="{ 'active-lang': preferredLang === 'urdu' }"
+        (click)="preferredLang = 'urdu'"
+        expand="block"
+      >
+        اردو
+      </ion-button>
+    </div>
+
+    <div>
+      <ion-button
+        size="large"
+        shape="round"
+        expand="block"
+        class="ion-submit-btn"
+        (click)="goToDashBoard()"
+      >
+        أكمل
+      </ion-button>
+    </div>
+  </div>
+  <app-final-exam-failed *ngIf="slag == 'fail'"></app-final-exam-failed>
+</ion-content>
+<app-footer></app-footer>
+
+

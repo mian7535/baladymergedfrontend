@@ -1,0 +1,154 @@
+<app-header [showSecondaryHeader]="true"></app-header>
+<ion-content>
+  <div class="login-container max-width-desk">
+    <div class="margin-desk">
+      <div class="ion-head-tag">
+        <div class="title-text">{{ 'My account' | translate}}</div>
+      </div>
+      <div class="ion-content-tag">
+        <ion-card class="card-content">
+          <ion-card-content class="px-0">
+            <ion-grid>
+              <!-- <ion-row>
+                <ion-col class="frutiger-light text-subtitle">
+                  {{ 'My Information' | translate }}
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="12" size-sm>
+                  <div class="profile-image">
+                    <ion-avatar class="ion-margin-start ion-image">
+                      <img [src]="profileImage ? profileImage : '../../../assets/image/Ellipse 3@2x.png'" />
+                    </ion-avatar>
+                  </div>
+                </ion-col>
+                <ion-col size="12" size-sm>
+                  <div class="display-grid text-subtitle frutiger-light">
+                    <div>
+                      <ion-button expand="full" class="ion-file frutiger-bold" (click)="chooseImage()">
+                        {{ 'Choose File' | translate }}
+                      </ion-button>
+                      <input type="file" id="profileFile" (change)="imageUpload($event)" style="display: none;" />
+                    </div>
+                  </div>
+                </ion-col>
+              </ion-row> -->
+              <ion-row>
+                <ion-col size="12" class="input-field text-subtitle frutiger-light">
+                  <ion-label position="fixed">
+                    {{ 'Full Name' | translate }}
+                  </ion-label>
+                  <ion-input readonly="" type="text" [(ngModel)]="profileDTO.fullName" name="fullName"></ion-input>
+                </ion-col>
+                <ion-col size="12" class="input-field text-subtitle frutiger-light no-padding">
+                  <ion-label position="fixed">
+                    {{ 'DOB' | translate }}
+                  </ion-label>
+                  <!-- <ion-item>
+                    <ion-input readonly [value]="dateValue2"></ion-input>
+                    <ion-button fill="clear" id="open-date-input-2">
+                      <ion-icon icon="calendar"></ion-icon>
+                    </ion-button>
+                    <ion-popover
+                      trigger="open-date-input-2"
+                      show-backdrop="false"
+                    >
+                      <ng-template>
+                        <ion-datetime
+                          #popoverDatetime2
+                          presentation="date"
+                          (ionChange)="dateValue2 = formatDate($event)"
+                        ></ion-datetime>
+                      </ng-template>
+                    </ion-popover>
+                  </ion-item> -->
+                  <ion-input readonly="" type="text" [(ngModel)]="profileDTO.date_of_birth" name="dob"></ion-input>
+                </ion-col>
+                <ion-col size="12" size-sm class="input-field text-subtitle frutiger-light">
+                  <ion-label position="fixed">
+                    {{ 'ID Number' | translate }}
+                  </ion-label>
+                  <ion-input readonly="" type="text" [(ngModel)]="profileDTO.national_id" name="idNumber"></ion-input>
+                </ion-col>
+                <ion-col size="12" size-sm class="input-field text-subtitle frutiger-light no-padding">
+                  <ion-label position="fixed">
+                    {{ 'Gender' | translate }}
+                  </ion-label>
+                  <ion-item>
+                    <ion-select [disabled]="true" [value]="profileDTO.gender">
+                      <ion-select-option [value]="1">{{ 'Male' | translate }}</ion-select-option>
+                      <ion-select-option [value]="2">{{ 'Female' | translate }}</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" class="input-field text-subtitle frutiger-light">
+                  <ion-label position="fixed">
+                    {{ 'Email' | translate }}
+                  </ion-label>
+                  <ion-input type="text" readonly="" [(ngModel)]="profileDTO.email" name="email"></ion-input>
+                </ion-col>
+                <ion-col size="12" class="input-field text-subtitle frutiger-light">
+                  <ion-label position="fixed">
+                    {{ 'Bank' | translate }}
+                  </ion-label>
+                  <ion-input type="text" readonly="" [(ngModel)]="profileDTO.bank_name" name="bank"></ion-input>
+                </ion-col>
+                <ion-col size="12" class="input-field text-subtitle frutiger-light">
+                  <ion-label position="fixed">
+                    {{ 'IBAN' | translate }}
+                  </ion-label>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col size="1" class="display-flex-center">
+                        {{ 'SA' | translate }}
+                      </ion-col>
+                      <ion-col size="11">
+                        <ion-input type="tel" readonly="" name="sa" placeholder="SA"
+                          [(ngModel)]="profileDTO.iban"></ion-input>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-col>
+                <!-- <ion-col
+                  size="12"
+                  class="input-field text-subtitle frutiger-light"
+                >
+                  <ion-label position="fixed">Social media</ion-label>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col size="3" class="display-flex-center">
+                        Twitter
+                      </ion-col>
+                      <ion-col size="9">
+                        <ion-input type="tel" name="twitter"></ion-input>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col size="3" class="display-flex-center">
+                        LinkedIn
+                      </ion-col>
+                      <ion-col size="9">
+                        <ion-input type="tel" name="linkedin"></ion-input>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                </ion-col> -->
+              </ion-row>
+            </ion-grid>
+            <!-- <div>
+              <ion-button
+                size="large"
+                expand="block"
+                shape="round"
+                class="ion-submit-btn"
+              >
+                {{ 'Save' | translate }}
+              </ion-button>
+            </div> -->
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<app-footer></app-footer>

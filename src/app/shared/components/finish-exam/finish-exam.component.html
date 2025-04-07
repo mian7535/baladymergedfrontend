@@ -1,0 +1,49 @@
+<div class="give-feedback-wrapper">
+  <!-- <div class="sub-header">
+    <div class="back-button-block">
+      <ion-icon name="arrow-back-outline" (click)="goBack()"></ion-icon>
+    </div>
+    <div class="logo-block">
+      <ion-img class="logo-image" src="assets/image/Group 1700.png"></ion-img>
+    </div>
+    <div class="blank"></div>
+  </div> -->
+  <div class="wrap mx-auto">
+    <img
+      class="feedback-image"
+      src="../../../../assets/image/Group 1729@2x.png"
+    />
+  </div>
+  <div class="container-wrapper">
+    <div class="layout-content">
+      <div class="layout-block mb-3">
+        {{ 'You finished all the lessons for this course.' | translate }}
+      </div>
+      <div class="layout-block mb-3">
+        {{ 'Would you like to continue and take the exam now?' | translate }}
+      </div>
+    </div>
+    <div class="layout-content">
+      <div class="layout-block mb-3">
+        <ion-button
+          expand="block"
+          size="large"
+          class="exam-take"
+          (click)="goToNextPage()"
+        >
+          {{ 'Take the exam' | translate }}
+        </ion-button>
+      </div>
+      <div class="layout-block mb-3">
+        <ion-button
+          expand="block"
+          size="large"
+          class="take-later"
+          (click)="goToNextPage()"
+        >
+          {{ 'Ill take it later' | translate }}
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</div>

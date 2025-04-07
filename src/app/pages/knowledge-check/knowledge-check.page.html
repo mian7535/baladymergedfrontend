@@ -1,0 +1,95 @@
+<app-header [showSecondaryHeader]="true"></app-header>
+<ion-content>
+  <div class="login-container max-width-desk">
+    <div>
+      <div class="exam-number h-120">{{ 'Knowledge Check' | translate }}</div>
+    </div>
+    <div
+      *ngIf="courseQuestions.length === 0"
+      class="card-container"
+      style="margin-top: 0; text-align: center;"
+    >
+      <h2>{{ 'No questions available' | translate }}</h2>
+      <ion-button
+          size="large"
+          expand="block"
+          shape="round"
+          class="ion-submit-btn"
+          (click)="goBackToLessons()"
+        >
+          {{ 'Back to Lessons' | translate }}
+        </ion-button>
+    </div>
+    <div *ngIf="courseQuestions.length > 0" class="card-container">
+      <ion-card
+        class="card-body"
+        *ngFor="let item of courseQuestions;let i = index"
+      >
+        <ion-card-content>
+          <div class="layout-block">
+            <p class="question-counter">
+              {{'Question' | translate}} {{i + 1}} / {{ courseQuestions.length
+              }}
+            </p>
+            <p class="question-title">
+              {{item[getKeyName('title')]}}
+            </p>
+            <div class="answers-wrapper">
+              <p style="color: var(--info-color);">
+                {{'Answers' | translate}}
+                <ion-icon
+                  name="checkmark-outline"
+                  class="text-green"
+                  *ngIf="isCurrectAnswer(item,i) && sumitted"
+                ></ion-icon>
+                <ion-icon
+                  name="close-outline"
+                  class="text-red"
+                  *ngIf="!isCurrectAnswer(item,i) && sumitted"
+                ></ion-icon>
+              </p>
+            </div>
+            <ion-list>
+              <ion-radio-group value="item{{i}}" [(ngModel)]="examAns[i]">
+                <ion-item
+                  *ngFor="let entry of item.question_options;let e = index"
+                >
+                  <ion-label [ngClass]="getCurrectAnswerId(entry,i)">
+                    {{entry[getKeyName('answar')]}}
+                  </ion-label>
+                  <ion-radio
+                    slot="start"
+                    color="success"
+                    [value]="entry.id"
+                  ></ion-radio>
+                </ion-item>
+              </ion-radio-group>
+            </ion-list>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <div *ngIf="courseQuestions.length > 0 && !sumitted">
+        <ion-button
+          size="large"
+          expand="block"
+          shape="round"
+          class="ion-submit-btn"
+          (click)="submitExam()"
+        >
+          {{ 'Check Answers' | translate }}
+        </ion-button>
+      </div>
+      <div *ngIf="courseQuestions.length > 0 && sumitted">
+        <ion-button
+          size="large"
+          expand="block"
+          shape="round"
+          class="ion-submit-btn"
+          (click)="goBackToLessons()"
+        >
+          {{ 'Back' | translate }}
+        </ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

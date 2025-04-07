@@ -1,0 +1,51 @@
+<ion-header class="header-wrapper" [translucent]="true" collapse="fade">
+  <!-- <ion-toolbar
+    class="header-margin"
+    [ngClass]="{ 'shadow-effect-header': !showSecondaryHeader }"
+  >
+    <div class="ion-header">
+      <img
+        (click)="goToHome()"
+        style="width: 125px;"
+        src="assets/icon/p5.png"
+      />
+    </div>
+    <span class="ion-cross" (click)="goBack()">
+      <ion-icon name="close-outline"></ion-icon>
+    </span>
+  </ion-toolbar> -->
+  <ion-toolbar
+    class="header-secondary header-secondary-arabic-wrapper"
+  >
+
+  <span
+      class="ion-arrow-left"
+      (click)="back()"
+    >
+      <!-- <ion-icon name="arrow-forward-outline"></ion-icon> -->
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </span>
+
+    <div class="ion-header ion-color" *ngIf="currentLang === 'en'">
+      <img src="assets/image/Group 1700.png" />
+    </div>
+    <div class="ion-header ion-color" *ngIf="currentLang === 'ur'">
+      <img src="assets/image/balady_academy_white_logo_ur@2x.png" />
+    </div>
+    <div class="ion-header ion-color" *ngIf="currentLang !== 'en' && currentLang !== 'ur'">
+      <img src="assets/image/balady_academy_white_logo_ar@2x.png" />
+    </div>
+    <span class="ion-arrow" (click)="goToHome()" *ngIf="currentLang === 'en'">
+      <!-- <ion-icon name="arrow-back-outline"></ion-icon> -->
+      <ion-icon name="home-sharp"></ion-icon>
+    </span>
+    <span
+      class="ion-arrow-right"
+      (click)="goToHome()"
+      *ngIf="currentLang !== 'en'"
+    >
+      <!-- <ion-icon name="arrow-forward-outline"></ion-icon> -->
+      <ion-icon name="home-sharp"></ion-icon>
+    </span>
+  </ion-toolbar>
+</ion-header>

@@ -1,0 +1,27 @@
+<div class="exam-completed-wrapper">
+  <div class="wrap mx-auto">
+    <img
+      class="feedback-image"
+      src="../../../../assets/image/Group 1727@2x.png"
+    />
+  </div>
+  <div class="layout-block">{{ 'Congratulations' | translate }}!</div>
+  <div class="congration-message mb-3">
+    {{ 'You passed the exam' | translate }}
+  </div>
+
+  <div class="receive-message mb-3">
+    {{ 'Receive a msg' | translate }} 
+  </div>
+
+  <div class="start-button">
+    <ion-button shape="round" (click)="downloadCertificate()">
+      {{ 'Download Certificate' | translate }}
+    </ion-button>
+    </div>
+  <div class="start-button">
+    <ion-button shape="round" (click)="navigateTo()">
+      {{ 'Back to dashboard' | translate }}
+    </ion-button>
+  </div>
+</div>

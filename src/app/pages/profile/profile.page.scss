@@ -1,0 +1,120 @@
+.header-secondary {
+  padding-top: 10px;
+  background-color: aliceblue;
+}
+.ion-head-tag {
+  background: #7ca651;
+  height: 115px;
+}
+
+.px-0 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.title-text {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  padding-top: 25px;
+  margin-bottom: 20px;
+}
+.ion-content-tag {
+  margin-top: -66px !important;
+  max-width: 550px;
+  margin: auto;
+}
+
+.no-padding ion-item ::ng-deep {
+  --padding-start: 0;
+}
+
+.card-content {
+  margin-bottom: 30px;
+}
+.ion-toolbar-card {
+  // background-color :#1c4b44;
+  color: var(--info-color);
+}
+.ion-toolbar-card ::ng-deep .segment-button-indicator-background {
+  background-color: #7ca651;
+}
+.ion-margin-start {
+  width: 130px;
+  height: 130px;
+}
+.ion-file {
+  --background: #f4f5f8;
+  --color: var(--ion-color-medium);
+}
+.display-flex-end {
+  display: flex;
+  align-items: flex-end;
+}
+.display-grid {
+  height: 100%;
+  display: grid;
+}
+.text-subtitle {
+  font-size: 20px;
+}
+.display-flex-center {
+  display: flex;
+  align-items: center;
+}
+.ion-submit-btn ::ng-deep {
+  --background: var(--info-color);
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+.example-stretched-tabs ::ng-deep {
+  max-width: 600px;
+  .mat-tab-label-content {
+    color: #1c4b44;
+  }
+  .mat-ink-bar {
+    background-color: #7ca651;
+  }
+}
+.mat-card {
+  padding: 0;
+}
+.profile-sm {
+  display: none;
+}
+.profile-md {
+  display: block;
+}
+
+::ng-deep ion-item.date-picker-item {
+  --inner-padding-end: 0 !important;
+}
+
+@media screen and (max-width: 425px) {
+  .ion-image {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-width: 425px) {
+  .ion-image {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .profile-sm {
+    display: block;
+    .profile-image {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .profile-md {
+    display: none;
+  }
+}

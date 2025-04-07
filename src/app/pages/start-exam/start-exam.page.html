@@ -1,0 +1,116 @@
+<app-header [showSecondaryHeader]="true"></app-header>
+<ion-content>
+  <div
+    *ngIf="!examCompleted && !feedbackGiven"
+    class="login-container max-width-desk"
+  >
+    <div>
+      <div class="exam-number h-120">{{ examDetails[getKeyName('title')] }}</div>
+    </div>
+    <div class="card-container">
+      <ion-card>
+        <ion-card-content *ngIf="!examStarted">
+          <div class="layout-block">
+            {{'Before you start the exam' | translate}}
+            <span></span>
+            <div
+              class="completion-details"
+              *ngFor="let completion of paragraph"
+            >
+              <div class="file">
+                <ion-icon name="document-outline"></ion-icon>
+              </div>
+              <div class="details">{{completion.details | translate}}</div>
+            </div>
+          </div>
+          <div class="start-button">
+            <ion-button shape="round" (click)="startExam()">
+              {{'Start the exam' | translate}}
+            </ion-button>
+          </div>
+        </ion-card-content>
+        <ion-card-content *ngIf="examStarted && questionData">
+          <div class="layout-block">
+            <p class="question-counter">
+              {{'Question' | translate}} {{currentQuestion + 1}} / {{ examDetails.questions.length
+              }}
+            </p>
+            <p class="question-title">
+              {{ questionData[getKeyName('title')] }}
+            </p>
+            <div class="answers-wrapper">
+              <p style="color: var(--info-color);">{{'Your answers' | translate}}</p>
+              <ion-list>
+                <ion-item *ngFor="let entry of questionData.options">
+                  <ion-label *ngIf="entry.type !== 'file'" class="ion-text-wrap">{{entry[getKeyName('answar')]}}</ion-label>
+                  <ion-label class="image-section" *ngIf="entry.type === 'file'">
+                    <img
+                      [src]="baseImageUrl + entry.image"
+                      (error)="onImgError($event)"
+                    />
+                  </ion-label>
+                  <ion-checkbox
+                    *ngIf="entry.isSelected"
+                    slot="start"
+                    checked
+                    [disabled]="examCompleted"
+                    (change)="clearOthers(entry, questionData.id)"
+                    [(ngModel)]="entry.isSelected"
+                  ></ion-checkbox>
+                  <ion-checkbox
+                    *ngIf="!entry.isSelected"
+                    slot="start"
+                    [disabled]="examCompleted"
+                    (ionChange)="clearOthers(entry, questionData.id)"
+                    [(ngModel)]="entry.isSelected"
+                  ></ion-checkbox>
+                </ion-item>
+              </ion-list>
+            </div>
+          </div>
+          <div class="start-button">
+            <ion-button
+              shape="round"
+              [disabled]="currentQuestion === 0 || examCompleted"
+              (click)="prevPage()"
+            >
+              {{ 'Prev' | translate }}
+            </ion-button>
+            <ion-button
+              *ngIf="currentQuestion !== examDetails.questions.length - 1"
+              shape="round"
+              [disabled]="!isAnySelected || examCompleted"
+              (click)="nextPage()"
+            >
+              {{ 'Next' | translate }}
+            </ion-button>
+            <ion-button
+              *ngIf="currentQuestion === examDetails.questions.length - 1"
+              shape="round"
+              [disabled]="!isAnySelected"
+              (click)="nextPage()"
+            >
+              {{ 'Submit' | translate }}
+            </ion-button>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+  <div
+    *ngIf="examCompleted && !feedbackGiven"
+    class="login-container max-width-desk"
+  >
+    <app-give-feedback
+      (submitFeedback)="submitFeedback($event)"
+    ></app-give-feedback>
+  </div>
+  <div
+    *ngIf="feedbackGiven"
+    class="login-container max-width-desk d-flex align-items-center justify-content-center"
+  >
+    <app-exam-completed *ngIf="successExam" [totalQuestion]="totalquestions" [rightQuestion]="rightAnswer"></app-exam-completed>
+    <app-exam-fail *ngIf="!successExam" [totalQuestion]="totalquestions" [result]="result" [rightQuestion]="rightAnswer"></app-exam-fail>
+  </div>
+</ion-content>
+<app-footer></app-footer>

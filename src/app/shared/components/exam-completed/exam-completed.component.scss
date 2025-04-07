@@ -1,0 +1,34 @@
+.feedback-image {
+  width: 150px;
+}
+
+.mx-auto {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.layout-block {
+  font-size: 20px;
+  text-align: center;
+  color: var(--light-black);
+  margin-bottom: 1rem;
+}
+
+.congration-message {
+  font-size: 16px;
+  text-align: center;
+}
+
+.receive-message {
+  font-size: 14px;
+  text-align: center;
+  color: #90BA54;
+}
+
+.start-button {
+  text-align: center;
+
+  ion-button {
+    --background: #036362;
+  }
+}

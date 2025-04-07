@@ -1,0 +1,21 @@
+<div class="exam-completed-wrapper">
+  <div class="wrap mx-auto">
+    <img
+      class="feedback-image"
+      src="../../../../assets/image/Group 1726@2x.png"
+    />
+    <div class="layout-block">{{ 'Next Time?' | translate }}</div>
+  </div>
+  <div class="congration-message mb-3">
+    {{ 'You scored' | translate }} {{ rightQuestion }}/{{ totalQuestion }}
+    {{
+      'which is not enough for passing the exam. Maybe next time?' | translate
+    }}
+  </div>
+  <div class="congration-message mb-3" *ngIf="result && result.attempt">{{ 'You have made' | translate }} {{ result.attempt.attemp_step }} {{ 'attempts' | translate }}!</div>
+  <div class="start-button">
+    <ion-button shape="round" (click)="navigateTo()">
+      {{ 'Back to courses' | translate }}
+    </ion-button>
+  </div>
+</div>

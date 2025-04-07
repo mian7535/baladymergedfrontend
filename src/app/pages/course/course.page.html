@@ -1,0 +1,167 @@
+<app-header [hidden]="modelOpen" [showSecondaryHeader]="true"></app-header>
+<ion-content [hidden]="modelOpen">
+  <div
+    *ngIf="!startFeedback && !showTakeExam && !shoeDescription"
+    class="login-container max-width-desk"
+  >
+    <div class="h-100">
+      <iframe
+        class="video-block h-100"
+        style="border: 0;"
+        [src]="videoSource | safe"
+      ></iframe>
+    </div>
+
+    <div class="course-title-block">
+      <div>
+        <span class="course-title">{{courseData[getKeyName('title')]}}</span>
+        <span class="course-title-span"
+        [innerHTML]="courseData[getKeyName('short_description')]"
+        >
+        </span>
+      </div>
+      <!-- <div>
+        <ion-icon
+          class="ellipsis-button"
+          name="ellipsis-horizontal-outline"
+          (click)="openMenu()"
+        ></ion-icon>
+      </div> -->
+    </div>
+      <div
+        class="accordion-group"
+        *ngFor="let course of courseData.sections;let i=index"
+      >
+        <ion-accordion-group
+          (click)="goToCheck(course)"
+          class="accordion-group-block"
+        >
+          <ion-accordion value="colors">
+            <ion-item slot="header">
+              <div class="chapter-index-block">
+                <div class="chapter-index">{{i + 1}}</div>
+                <div>
+                  <span class="chapter-title">
+                    {{course[getKeyName('name')]}}
+                  </span>
+                </div>
+              </div>
+            </ion-item>
+
+            <ion-list
+              class="accordion-list"
+              slot="content"
+              *ngFor="let section of course.lessons;let si=index"
+            >
+              <div class="list-details">
+              <div>
+                {{ 'Lesson' | translate }} {{si + 1}} - {{section[getKeyName('title')]}}
+                <div
+                [innerHTML]="section[getKeyName('summary')]"
+                >
+                </div>
+              </div>
+              <div
+              *ngIf="section.type == 'other-img' 
+                    && section.images 
+                    && section.images.length > 0"
+              class="images-wrapper-sections"
+            >
+              <div class="image-section" *ngFor="let image of section.images">
+                <img
+                  [src]="baseImageUrl + image.image"
+                  (click)="showModel({
+                    type: 'img',
+                    file: image.image
+                  })"
+                  (error)="onImgError($event)"
+                />
+              </div>
+            </div>
+
+            <div
+            class="image-section"
+            *ngIf="section.type == 'other-pdf' && section.file">
+            <img
+            class="img-max-width"
+            [src]="baseImageUrl + 'frontend/186822.png'"
+            (click)="showModel({
+              type: 'other-pdf',
+              file: section.file
+            })"
+            (error)="onImgError($event)"
+          />
+            </div>
+            </div>
+              <div class="course-button" *ngIf="section.lesson_completed == 0">
+                <ion-button (click)="completeLesson(section)">{{ 'Click here to complete the lessons' | translate }}</ion-button>
+              </div>
+              <div class="disable-button" *ngIf="section.lesson_completed == 1">
+                <ion-button color="medium" [disabled]="section.lesson_completed"> {{ 'Complete' | translate }}</ion-button>
+              </div>
+            </ion-list>
+          </ion-accordion>
+        </ion-accordion-group>
+      </div>
+    <div class="finish-button">
+      <ion-button (click)="addFeedback()" [disabled]="finishCourse">
+        {{ 'Finish Course' | translate }}
+      </ion-button>
+    </div>
+  </div>
+  <div
+    *ngIf="startFeedback && !showTakeExam"
+    class="login-container max-width-desk"
+  >
+    <app-give-feedback
+      (submitFeedback)="submitFeedback($event)"
+    ></app-give-feedback>
+  </div>
+  <div *ngIf="showTakeExam" class="login-container max-width-desk">
+    <app-finish-exam></app-finish-exam>
+  </div>
+  <div *ngIf="shoeDescription" class="login-container max-width-desk">
+    <app-description-problem></app-description-problem>
+  </div>
+  <ion-modal
+    [isOpen]="courseModel"
+    [breakpoints]="[0.1, 0.2, 0.4]"
+    [swipeToClose]="true"
+    [initialBreakpoint]="0.4"
+    (didDismiss)="onHideDialog()"
+  >
+    <ng-template>
+      <ion-content fullscreen>
+        <ion-list>
+          <ion-item class="model-content" (click)="goToCourseDetail()">
+            <ion-label>
+              <h1>{{ 'About This Course' | translate }}</h1>
+            </ion-label>
+          </ion-item>
+          <!-- <ion-item class="model-content" (click)="showDescriptionProblem()">
+            <ion-label>
+              <h1>{{ 'Report' | translate }}</h1>
+            </ion-label>
+          </ion-item> -->
+          <!-- <ion-item class="model-content" (click)="showDescriptionProblem()">
+            <ion-label>
+              <h1>{{ 'Report a Playback Problem' | translate }}</h1>
+            </ion-label>
+          </ion-item> -->
+          <ion-item class="model-content" (click)="onHideDialog()">
+            <ion-label>
+              <h1>{{ 'Cancel' | translate }}</h1>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>
+<app-footer [hidden]="modelOpen"></app-footer>
+<app-course-model
+  [hidden]="!modelOpen"
+  (closeModel)="closeModel($event)"
+  [type]="typeOfSourse"
+  [pdfVideoSource]="pdfVideoSource"
+></app-course-model>

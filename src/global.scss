@@ -1,0 +1,290 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+@import "./assets/scss/style.scss";
+
+@font-face {
+  font-family: "Frutiger Light";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Light"),
+    url("./assets/fonts/FrutigerLT45Light.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Frutiger Light Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Light Italic"),
+    url("./assets/fonts/FrutigerLT46LightItalic.ttf") format("woff");
+}
+@font-face {
+  font-family: "Frutiger Light Condensed";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Light Condensed"),
+    url("./assets/fonts/FrutigerLT47LightCondensed.ttf") format("woff");
+}
+@font-face {
+  font-family: "Frutiger Light Condensed Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Light Condensed Italic"),
+    url("./assets/fonts/FrutigerLT48LightCondensedItalic.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Frutiger Condensed";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Condensed"),
+    url("./assets/fonts/FrutigerLT57Condensed.ttf") format("woff");
+}
+@font-face {
+  font-family: "Frutiger Condensed Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Condensed Italic"),
+    url("./assets/fonts/FrutigerLT58CondensedItalic.ttf") format("woff");
+}
+@font-face {
+  font-family: "Frutiger Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Italic"),
+    url("./assets/fonts/FrutigerLT56Italic.ttf") format("woff");
+}
+@font-face {
+  font-family: "Frutiger Roman";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Roman"),
+    url("./assets/fonts/FrutigerLT55Roman.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Frutiger Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Bold"),
+    url("./assets/fonts/FrutigerLT65Bold.ttf") format("woff");
+}
+@font-face {
+  font-family: "Frutiger Bold Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Bold Italic"),
+    url("./assets/fonts/FrutigerLT66BoldItalic.ttf") format("woff");
+}
+@font-face {
+  font-family: "Frutiger Bold Condensed";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Bold Condensed"),
+    url("./assets/fonts/FrutigerLT67BoldCondensed.ttf") format("woff");
+}
+@font-face {
+  font-family: "Frutiger Bold Condensed Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Bold Condensed Italic"),
+    url("./assets/fonts/FrutigerLT68BoldCondensedItalic.ttf") format("woff");
+}
+@font-face {
+  font-family: "Frutiger Black";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Black"),
+    url("./assets/fonts/FrutigerLT75Black.ttf") format("woff");
+}
+@font-face {
+  font-family: "Frutiger Black Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Black Italic"),
+    url("./assets/fonts/FrutigerLT76BlackItalic.ttf") format("woff");
+}
+@font-face {
+  font-family: "Frutiger Black Condensed";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Black Condensed"),
+    url("./assets/fonts/FrutigerLT77BlackCondensed.ttf") format("woff");
+}
+@font-face {
+  font-family: "Frutiger Black Condensed Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Black Condensed Italic"),
+    url("./assets/fonts/FrutigerLT78BlackCondensedItalic.ttf") format("woff");
+}
+@font-face {
+  font-family: "Frutiger Extra Black Condensed";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Extra Black Condensed"),
+    url("./assets/fonts/FrutigerLT87ExtraBlackCondensed.ttf") format("woff");
+}
+@font-face {
+  font-family: "Frutiger Extra Black Condensed Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Extra Black Condensed Italic"),
+    url("./assets/fonts/FrutigerLT88ExtraBlackCondensedItalic.ttf")
+      format("woff");
+}
+@font-face {
+  font-family: "Frutiger Ultra Black";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Frutiger Ultra Black"),
+    url("./assets/fonts/FrutigerLT95UltraBlack.ttf") format("woff");
+}
+
+.frutiger-light {
+  font-family: "Frutiger Light";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.frutiger-light-italic {
+  font-family: "Frutiger Light Italic";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.frutiger-light-condensed {
+  font-family: "Frutiger Light Condensed";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.frutiger-light-condensed-italic {
+  font-family: "Frutiger Light Condensed Italic";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.frutiger-condensed {
+  font-family: "Frutiger Condensed";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.frutiger-condensed-italic {
+  font-family: "Frutiger Condensed Italic";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.frutiger-italic {
+  font-family: "Frutiger Italic";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.frutiger-roman {
+  font-family: "Frutiger Roman";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.frutiger-bold {
+  font-family: "Frutiger Bold";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.frutiger-bold-italic {
+  font-family: "Frutiger Bold Italic";
+  font-style: normal;
+  font-weight: normal;
+}
+
+.frutiger-bold-condensed {
+  font-family: "Frutiger Bold Condensed";
+  font-style: normal;
+  font-weight: normal;
+}
+.frutiger-bold-condensed-italic {
+  font-family: "Frutiger Bold Condensed Italic";
+  font-style: normal;
+  font-weight: normal;
+}
+.frutiger-black {
+  font-family: "Frutiger Black";
+  font-style: normal;
+  font-weight: normal;
+}
+.frutiger-black-italic {
+  font-family: "Frutiger Black Italic";
+  font-style: normal;
+  font-weight: normal;
+}
+.frutiger-black-condensed {
+  font-family: "Frutiger Black Condensed";
+  font-style: normal;
+  font-weight: normal;
+}
+.frutiger-black-condensed-italic {
+  font-family: "Frutiger Black Condensed Italic";
+  font-style: normal;
+  font-weight: normal;
+}
+.frutiger-extra-black-condensed {
+  font-family: "Frutiger Extra Black Condensed";
+  font-style: normal;
+  font-weight: normal;
+}
+.frutiger-extra-black-condensed-italic {
+  font-family: "Frutiger Extra Black Condensed Italic";
+  font-style: normal;
+  font-weight: normal;
+}
+.frutiger-ultra-black {
+  font-family: "Frutiger Ultra Black";
+  font-style: normal;
+  font-weight: normal;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  border-radius: 5px;
+  background: #fff;
+  -webkit-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 8px;
+}
+

@@ -1,0 +1,56 @@
+<app-header [showSecondaryHeader]="true"></app-header>
+<ion-content>
+  <div class="login-container max-width-desk">
+    <div class="margin-desk">
+      <div class="ion-head-tag">
+        <div class="title-text">Schedule Tests</div>
+        <div class="search-input">
+          <ion-searchbar placeholder="{{ 'Search' | translate }}" class="search-bar"></ion-searchbar>
+        </div>
+      </div>
+      <div class="">
+        <div class="example-container mat-elevation-z8">
+          <mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="testTitle" sticky>
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+                Test Title
+              </mat-header-cell>
+              <mat-cell *matCellDef="let row">{{row.testTitle}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="course">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+                Course
+              </mat-header-cell>
+              <mat-cell *matCellDef="let row">{{row.course}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="student">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+                {{'Student' | translate}}
+              </mat-header-cell>
+              <mat-cell *matCellDef="let row">{{row.student}}</mat-cell>
+              <td mat-footer-cell *matFooterCellDef></td>
+            </ng-container>
+            <ng-container matColumnDef="assignDate">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+                Assign Date
+              </mat-header-cell>
+              <mat-cell *matCellDef="let row">{{row.assignDate}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="completeDate">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+                Complete Date
+              </mat-header-cell>
+              <mat-cell *matCellDef="let row">{{row.completeDate}}</mat-cell>
+            </ng-container>
+            <mat-header-row
+              *matHeaderRowDef="displayedColumns"
+            ></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>
+<app-footer></app-footer>
