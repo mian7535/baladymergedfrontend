@@ -27,9 +27,6 @@ export class DashboardPage extends TranslateHelperComponent implements OnInit {
     private commonService: CommonService,
   ) {
     super(translateService);
-    if (window.location.href.includes('reload')) {
-      window.location.href = '/dashboard';
-    }
   }
 
   ngOnInit() {
@@ -41,8 +38,8 @@ export class DashboardPage extends TranslateHelperComponent implements OnInit {
     this.router.navigate(['/home']);
   }
 
-  getVideoLink() {
-    this.httpClient
+ async getVideoLink() {
+   this.httpClient
       .get(`${environment.apiEndpoint}/student/dashbaord`)
       .subscribe(
         (res: any) => {
@@ -59,7 +56,7 @@ export class DashboardPage extends TranslateHelperComponent implements OnInit {
       );
   }
 
-  getKeyName(key: string) {
+   getKeyName(key: string) {
     return `${this.commonService.getLangPrefix()}${key}`;
   }
 
@@ -71,10 +68,10 @@ export class DashboardPage extends TranslateHelperComponent implements OnInit {
           if (res.status) {
             this.profileDTO = res.data;
             this.profileDTO.fullName = [
+              this.profileDTO.family_name,
               this.profileDTO.first_name,
               this.profileDTO.father_name,
               this.profileDTO.third_name,
-              this.profileDTO.family_name,
             ]
               .filter((x) => x)
               .join(' ');

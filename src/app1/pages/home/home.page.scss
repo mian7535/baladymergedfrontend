@@ -1,0 +1,36 @@
+.login-txt {
+  text-align: center;
+  margin: 5px;
+  font-size: 20px;
+  letter-spacing: 0px;
+  color: #35393f;
+  margin-top: 20px;
+}
+.ion-lang-btn {
+  margin: 15px 20px;
+  margin-bottom: 0;
+}
+.ion-text-title {
+  margin-bottom: 40px;
+}
+
+.not-active ::ng-deep {
+  --background: var(--light-color);
+  --color: var(--light-black)
+}
+
+.active-lang ::ng-deep {
+  --background: var(--success-color);
+  --color: var(--white-color)
+}
+
+.ion-submit-btn ::ng-deep {
+  --background: var(--info-color);
+  margin: 55px 20px 20px 20px;
+}
+.login-container {
+  background-color: #fff;
+}
+.wrap-top-image {
+  padding: 20px 50px;
+}

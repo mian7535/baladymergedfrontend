@@ -1,0 +1,33 @@
+<div class="d-flex justify-content-center">
+  <div class="close-header">
+    <div class="back-button-block" (click)="toggleModel()">
+      <ion-icon name="close-outline"></ion-icon>
+    </div>
+    <div class="blank"></div>
+  </div>
+</div>
+<div class="login-container max-width-desk">
+  <div class="pdf-wrapper" *ngIf="type === 'other-pdf'">
+    <embed
+      [src]="pdfVideoSource | safe"
+      type="application/pdf"
+      class="pdf-block"
+    />
+  </div>
+  <div class="pdf-wrapper" *ngIf="type === 'img'">
+    <img
+      [src]="pdfVideoSource | safe"
+      style="object-fit: contain"
+      (error)="onImgError($event)"
+      class="pdf-block"
+    />
+  </div>
+  <div class="container-wrapper" *ngIf="type === 'video-url'">
+    <iframe
+      class="video-block"
+      style="border: 0"
+      [src]="pdfVideoSource | safe"
+      name="video"
+    ></iframe>
+  </div>
+</div>

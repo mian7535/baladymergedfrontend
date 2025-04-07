@@ -235,12 +235,16 @@ export class CoursePage extends TranslateHelperComponent implements OnDestroy, O
     if (lessons.type === 'video-url') {
       this.typeOfSourse = lessons.type;
       this.pdfVideoSource = lessons.vedio_url;
-    } else if(lessons.type === 'other-pdf'){
-        this.typeOfSourse = lessons.type;
-        this.pdfVideoSource = `${environment.baseUrl}${lessons.file}&type=pdf`;
-    }else {
+    } else if (lessons.type === 'other-pdf') {
       this.typeOfSourse = lessons.type;
       this.pdfVideoSource = `${environment.baseUrl}${lessons.file}`;
+      // Open PDF in a new tab for mobile compatibility
+      window.open(this.pdfVideoSource, '_blank');
+    } else {
+      this.typeOfSourse = lessons.type;
+      this.pdfVideoSource = `${environment.baseUrl}${lessons.file}`;
+      // Open PDF in a new tab for mobile compatibility
+      window.open(this.pdfVideoSource, '_blank');
     }
     this.modelOpen = true;
   }
