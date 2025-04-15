@@ -28,7 +28,7 @@
       <div class="ion-item">
         <ion-grid>
           <ion-row>
-            <ion-col size="6">
+            <ion-col size="6" *ngIf="profileDTO.is_certificate === '1'">
               <button type="button" class="card box" routerLink="/my-courses">
                 <div class="image-board">
                   <img
